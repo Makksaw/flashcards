@@ -18,14 +18,14 @@ async function getFlashcards() {
                         <div class="back">${translatedWord}</div>
                     `;
 
-                    if (index !== 0) {
-                        flashCardDiv.classList.add('hidden');
+                    if (index === 0) {
+                        flashCardDiv.classList.remove('hidden');
                     }
 
                     flashcardContainer.append(flashCardDiv);
                 });
 
-                updateFlashcardVisibility();
+                updateNavigationButton();
             } else {
                 const noCardsDiv = document.createElement('div');
                 noCardsDiv.classList.add('no-cards');
@@ -48,11 +48,36 @@ flashcardContainer.addEventListener('click', (e) => {
 function updateFlashcardVisibility() {
     const flashcards = document.querySelectorAll('.flashcard');
     flashcards.forEach((flashcard, index) => {
-        flashcard.classList.add('hidden');
         if (index === currentCard) {
             flashcard.classList.remove('hidden');
+        } else {
+            flashcard.classList.add('hidden');
         }
     });
 }
 
-// function
+function updateNavigationButton() {
+    if (currentCard === 0) {
+        prevButton.disabled = true;
+    } else {
+        prevButton.disabled = false;
+    }
+
+    if (currentCard === document.querySelectorAll('.flashcard').length - 1) {
+        nextButton.disabled = true;
+    } else {
+        nextButton.disabled = false;
+    }
+}
+
+nextButton.addEventListener('click', () => {
+    currentCard++;
+    updateFlashcardVisibility();
+    updateNavigationButton();
+});
+
+prevButton.addEventListener('click', () => {
+    currentCard--;
+    updateFlashcardVisibility();
+    updateNavigationButton();
+});

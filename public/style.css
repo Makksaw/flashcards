@@ -104,7 +104,12 @@ a {
 }
 
 .flashcard-container {
-    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; /* Ensure the flashcard container takes up most of the screen */
+    flex-direction: column;
+    text-align: center; /* Ensure text in the cards is centered */
 }
 
 .flashcard {
@@ -158,15 +163,19 @@ a {
 }
 
 .navigation {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
     margin-top: 20px;
 }
 
 .navigation button {
     padding: 10px 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -181,7 +190,6 @@ a {
 }
 
 .navigation button:disabled {
-    display: none;
     background-color: #ccc;
     cursor: not-allowed;
 }
