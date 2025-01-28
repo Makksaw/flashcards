@@ -4,8 +4,11 @@
 
 ## Navigation
 Home Page - /
+
 Create flashcard - /createSet
+
 Learn Page - /learn
+
 JSON of all flashcards - /words
 
 ## Installation
@@ -28,3 +31,5 @@ npm install
 ```
 npm start
 ```
+
+Enjoy :)
