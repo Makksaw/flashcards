@@ -31,7 +31,13 @@ app.post('/words', (req, res) => {
     res.status(201).json({ originalWord, translatedWord });
 });
 
-app.get('/learn', (req, res) => {});
+app.get('/learn', (req, res) => {
+    res.sendFile(__dirname + '/learn.html', (err) => {
+        if (err) {
+            res.status(500).send(err);
+        }
+    });
+});
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000');

@@ -15,8 +15,8 @@ flashCardForm.addEventListener('submit', async (e) => {
 
     if (response.ok) {
         flashCardForm.reset();
+        window.location.href = '/';
         alert('Flashcard created successfully!');
-        window.location.href = '/learn';
     } else {
         const errorMessage = await response.text();
         alert(errorMessage);
