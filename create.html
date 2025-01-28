@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/style.css" />
+        <title>Flashcards — Create</title>
+    </head>
+    <body>
+        <form id="flashcard-form" class="flashcard-form">
+            <h3 class="create-flashcard">Create a flashcard</h3>
+            <input
+                type="text"
+                id="question"
+                name="question"
+                placeholder="Enter the original"
+                required
+            />
+
+            <input
+                type="text"
+                id="answer"
+                name="answer"
+                placeholder="Enter the translation"
+                required
+            />
+
+            <button type="submit">Create</button>
+        </form>
+
+        <script src="/create.js"></script>
+    </body>
+</html>
